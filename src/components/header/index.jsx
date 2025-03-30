@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import { Sun, Moon, Menu } from 'lucide-react';
 import { Button } from '@components/ui/button';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLanguage } from '@/store/slices/languageSlice';
+import { setLanguage } from '@/store/slices/language';
 import P from '../translate';
 import { useEffect, useMemo } from 'react';
-import { toggleTheme } from '@/store/slices/themeSlice';
-import { toggleSideBar } from '@/store/slices/sideBarSlice';
+import { toggleTheme } from '@/store/slices/theme';
+import { toggleSideBar } from '@/store/slices/sideBar';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const Header = () => {
           <Button
             variant='ghost'
             style={menuButtonPosition}
-            onClick={() => dispatch(toggleSideBar())}
+            onClick={() => dispatch(toggleSideBar('menu'))}
           >
             <Menu className={`h-4 w-4`} />
           </Button>
