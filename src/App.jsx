@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from './store/slices/themeSlice';
-import Header from '@components/header';
+import { toggleTheme } from './store/slices/theme';
 import ThemeRoutes from './routes';
 
 function App() {

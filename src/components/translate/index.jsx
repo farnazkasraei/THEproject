@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getTranslations } from '../../store/slices/languageSlice';
+import { getTranslations } from '../../store/slices/language';
 
 const P = ({ children, translate, ...props }) => {
   const language = useSelector(state => state.language.language);
