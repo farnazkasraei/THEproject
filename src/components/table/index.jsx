@@ -26,6 +26,7 @@ import { toggleSideBar } from '@/store/slices/sideBar';
 
 const DynamicTable = ({ headers, className, ...rest }) => {
   const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme.theme);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(3); // Adjust as needed
@@ -69,7 +70,7 @@ const DynamicTable = ({ headers, className, ...rest }) => {
   return (
     <div className='w-full'>
       <Table className={`w-full border rounded-lg ${className || ''}`} {...rest}>
-        <TableHeader>
+        <TableHeader className={`${theme === 'dark' ? 'bg-gray-500' : 'bg-gray-100'}`}>
           <TableRow>
             <TableHead className='text-center'>#</TableHead>
             {headers.map((header, index) => (
@@ -87,7 +88,7 @@ const DynamicTable = ({ headers, className, ...rest }) => {
             </TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody>
+        <TableBody className={`${theme === 'dark' ? 'bg-gray-400' : 'bg-gray-100'}`}>
           {paginatedData.map((row, rowIndex) => (
             <TableRow key={rowIndex}>
               <TableCell className='text-center'>{rowIndex + 1}</TableCell>
@@ -99,7 +100,7 @@ const DynamicTable = ({ headers, className, ...rest }) => {
                     : row[header] ?? '-'}
                 </TableCell>
               ))}
-              <TableCell className='text-center'>
+              <TableCell className='text-center flex gap-1 justify-center'>
                 <Button
                   variant='outline'
                   size='icon'
