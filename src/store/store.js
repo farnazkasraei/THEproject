@@ -1,21 +1,23 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import languageReducer from './slices/languageSlice';
-import themeReducer from './slices/themeSlice';
-import sideBarReducer from './slices/sideBarSlice';
+import languageReducer from './slices/language';
+import themeReducer from './slices/theme';
+import sideBarReducer from './slices/sideBar';
+import usersReducer from './slices/users';
 
 // Combine reducers
 const rootReducer = combineReducers({
   language: languageReducer,
   theme: themeReducer,
   sidebar: sideBarReducer,
+  users: usersReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['language', 'theme'],
+  whitelist: ['language', 'theme', 'users'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
