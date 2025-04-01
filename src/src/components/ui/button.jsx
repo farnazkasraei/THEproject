@@ -1,3 +1,5 @@
+// why this components is here? it should be in component folder.
+// so config your shadcn components.json file better
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva } from "class-variance-authority";

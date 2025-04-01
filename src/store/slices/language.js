@@ -1,3 +1,4 @@
+// dont store locales in redux, create a provider for locale
 import { createSlice } from '@reduxjs/toolkit';
 import en from '@locales/en.json';
 import fa from '@locales/fa.json';

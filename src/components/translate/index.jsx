@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+// create allias for the path
 import { getTranslations } from '../../store/slices/language';
 
 const P = ({ children, translate, ...props }) => {

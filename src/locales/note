@@ -1,0 +1,11 @@
+{
+  "ID": "شناسه",
+  "lastName": "نام خانوادگی",
+  "male": "مذکر",
+  "tell us about yourself": "از خود بگویید",
+  "Actions": "عملیات",
+}
+
+
+why you didnt keep a structure for keys? 
+is there camelCase or snake_case or simple words with space in there?

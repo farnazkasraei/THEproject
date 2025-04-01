@@ -1,3 +1,4 @@
+// this is not component, it is view in layout.
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
